@@ -1,11 +1,10 @@
+// "use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ClientNavbar from "../commponents/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -18,8 +17,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" bbai-tooltip-injected="true">
+      <body
+        className="my-body-class my-body-class vsc-initialized"
+        data-new-gr-c-s-check-loaded="14.1235.0"
+        data-gr-ext-installed=""
+      >
+        <ClientNavbar />
         {children}
       </body>
     </html>
